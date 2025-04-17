@@ -11,7 +11,7 @@ func main() {
 	body, _ := config.Read()
 	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
-	currentUser := scanner.Text()
+	currentUser := string(scanner.Text()[0])
 	if body.CurrentUserName != currentUser {
 		config.SetUser(currentUser)
 	}

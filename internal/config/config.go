@@ -47,7 +47,7 @@ func SetUser(user string) error {
 	if err != nil {
 		return fmt.Errorf("could not marshal updated config file: %v", err)
 	}
-	if err := os.WriteFile(configFilePath, configData, 0644); err != nil {
+	if err := os.WriteFile(configFilePath, configData, 0o644); err != nil {
 		return fmt.Errorf("could not write config file: %v", err)
 	}
 	return nil
